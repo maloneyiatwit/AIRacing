@@ -78,7 +78,8 @@ public class MapGenerator : MonoBehaviour
         while(tileCount != maxTiles){
             GenerateTile();
         }
-
+        
+        tileToGenerate =4;
         RotationCheck();
 
         last = Instantiate(end, new Vector3(currTileX, 0.0f, currTileZ), Quaternion.Euler(0.0f,rotation,0.0f));
@@ -271,7 +272,7 @@ public class MapGenerator : MonoBehaviour
 
     void RotationCheck(){
         
-        if(tileToGenerate == 0){
+        if(tileToGenerate == 0 || tileToGenerate == 4){
 
             if ( last.tag == "Left"){
 
@@ -353,6 +354,7 @@ public class MapGenerator : MonoBehaviour
 
                 }
 
+           
 
         }
 
@@ -415,6 +417,9 @@ public class MapGenerator : MonoBehaviour
 
 
         }
+
+    
+        
 
         
     }
